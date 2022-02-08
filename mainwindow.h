@@ -16,9 +16,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    threadList list;
+    threadList* list;
 
     void update();
+
+    QImage img;
 
 private slots:
     void on_start_clicked();
@@ -26,6 +28,8 @@ private slots:
     void on_stop_clicked();
 
     void on_threadsCombobox_activated(const QString &arg1);
+
+    void ppaint();
 
 
 

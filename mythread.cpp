@@ -1,7 +1,7 @@
 #include "mythread.h"
 #include "QDebug"
 
-MyThread::MyThread(QString str, QObject *parent) : QObject(parent)
+MyThread::MyThread(QImage* img, QString str, QObject *parent) : QObject(parent)
 {
 this->str=str;
     qDebug()<<"создаю "<<str;
@@ -12,9 +12,10 @@ this->str=str;
     connect(&runner, &Runner::finished, &thread, &QThread::terminate);
 
 
-
+    runner.img=img;
+    runner.URL=str;
     runner.moveToThread(&thread);
-    thread.start();
+//    thread.start();
 
 
 }
@@ -23,6 +24,7 @@ MyThread::~MyThread()
 {
 
     qDebug()<<"удаляю "<<str;
+
 }
 
 void MyThread::stop()
@@ -30,3 +32,12 @@ void MyThread::stop()
     qDebug("stop");
     runner.setRunning(false);
 }
+
+
+
+
+
+
+
+
+

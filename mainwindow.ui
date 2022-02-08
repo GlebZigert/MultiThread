@@ -6,34 +6,62 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>365</width>
-    <height>135</height>
+    <width>693</width>
+    <height>594</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="1">
-     <widget class="QPushButton" name="stop">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="maximumSize">
+       <size>
+        <width>800</width>
+        <height>600</height>
+       </size>
+      </property>
       <property name="text">
-       <string>STOP</string>
+       <string>TextLabel</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QLineEdit" name="lineEdit"/>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="start">
-      <property name="text">
-       <string>ЗАПУСК</string>
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>100</height>
+       </size>
       </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="start">
+         <property name="text">
+          <string>ЗАПУСК</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QComboBox" name="threadsCombobox"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="stop">
+         <property name="text">
+          <string>STOP</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QComboBox" name="threadsCombobox"/>
     </item>
    </layout>
   </widget>
@@ -42,7 +70,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>365</width>
+     <width>693</width>
      <height>29</height>
     </rect>
    </property>

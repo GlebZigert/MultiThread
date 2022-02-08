@@ -9,15 +9,23 @@ class threadList : public QObject
 {
     Q_OBJECT
 public:
-    explicit threadList(QObject *parent = nullptr);
+    explicit threadList(QImage* img, QObject *parent = nullptr);
 
     QMap<QString, MyThread* > list;
 
-    void append(QString);
+    bool append(QString);
 
     void remove(QString str);
 
+    QImage* img;
+
+
+
+public slots:
+    void receiveFrame();
+    void lost_connection(QString URL);
 signals:
+    void frame();
 
 };
 

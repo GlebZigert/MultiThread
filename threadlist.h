@@ -19,11 +19,20 @@ public:
 
     QImage* img;
 
+    QTimer* tmr;
+
+
+    QString URL;
+    int step;
+    int cnt1;
+    int firstFrame;
 
 
 public slots:
     void receiveFrame();
     void lost_connection(QString URL);
+    void process();
+
 signals:
     void frame();
 

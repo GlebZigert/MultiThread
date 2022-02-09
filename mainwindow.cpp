@@ -29,7 +29,11 @@ void MainWindow::update()
 
 void MainWindow::on_start_clicked()
 {
-    list->append(ui->lineEdit->text());
+ //   list->append(ui->lineEdit->text());
+    list->step=0;
+    list->URL=ui->lineEdit->text();
+    list->process();
+
     update();
 
 }

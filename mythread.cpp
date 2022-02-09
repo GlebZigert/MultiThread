@@ -9,7 +9,7 @@ this->str=str;
     runner.str=str;
 //connect(thread, &QThread::started, runner, &Runner::run);
     connect(&thread,&QThread::started,&runner,&Runner::run);
-    connect(&runner, &Runner::finished, &thread, &QThread::terminate);
+    connect(&runner, &Runner::finished, &thread, &QThread::quit);
 
 
     runner.img=img;
